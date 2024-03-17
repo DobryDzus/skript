@@ -1,0 +1,21 @@
+command /kickondie:
+    permission: majuki.kickondie
+    executable by: players
+    trigger:
+        if {kickondie} is true:
+            send "Nyní hráči nebudou kickováni při smrti."
+            set {kickondie} to false
+            if player has permission "majuki.kickondieoznameni":
+                send "Přepínač pro kickování hráčů při smrti byl vypnut."
+        else:
+            send "Nyní hráči budou kickováni při smrti."
+            set {kickondie} to true
+            if player has permission "majuki.kickondieoznameni":
+                send "Přepínač pro kickování hráčů při smrti byl zapnut."
+
+on death:
+    victim is a player:
+        if {kickondie} is true:
+            kick the victim due to "Byl jsi vyhozen za smrt!"
+
+#made with love by Majuki

@@ -1,0 +1,7 @@
+on command "minecraft:me":
+	if player don't have permission "*":
+		send "&cco zkousis blbecku"
+		cancel event
+
+
+#made with love by Majuki

@@ -1,0 +1,4 @@
+on join:
+    make players execute command "/ba quickjoin"
+
+# made with love by majuki

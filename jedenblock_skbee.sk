@@ -1,0 +1,19 @@
+command /getoneblock:
+    permission: majuki.getoneblock
+    executable by: players
+    trigger:
+        give player grass block named "&2oneblock"
+
+on place:
+  name of player's tool is set
+  set tag "custom;item" of (nbt compound of event-block) to nbt compound of player's tool
+
+on break:
+  set {_item} to tag "custom;item" of (nbt compound of event-block)
+  {_item} is set
+  cancel event
+  give player a random element of all items
+
+
+
+# made with love by majuki
